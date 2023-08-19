@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  rest-proxy:
+    image: confluentinc/cp-kafka-rest:7.3.0
+    ports:
+      - $PORT:8082
+    env_file: .env
+    hostname: rest-proxy
+    container_name: rest-proxy
+    environment:
+      KAFKA_REST_HOST_NAME: rest-proxy
+      KAFKA_REST_LISTENERS: "http://0.0.0.0:8082"
+      KAFKA_REST_BOOTSTRAP_SERVERS: $BOOTSTRAP_SERVERS
+      KAFKA_REST_SECURITY_PROTOCOL: "$SECURITY_PROTOCOL"
+      KAFKA_REST_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='$KAFKA_SASL_USERNAME' password='$KAFKA_SASL_PASSWORD';"
+      KAFKA_REST_SASL_MECHANISM: "PLAIN"
+      KAFKA_REST_CLIENT_BOOTSTRAP_SERVERS: $BOOTSTRAP_SERVERS
+      KAFKA_REST_CLIENT_SECURITY_PROTOCOL: "SASL_SSL"
+      KAFKA_REST_CLIENT_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='$KAFKA_SASL_USERNAME' password='$KAFKA_SASL_PASSWORD';"
+      KAFKA_REST_CLIENT_SASL_MECHANISM: "PLAIN" 
+ 

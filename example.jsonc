@@ -1,0 +1,22 @@
+[
+    {
+        "key": "6d1268bb-5101-4702-823b-e6b91be9bdf5", // The message key
+        "value": {
+          "data": {
+            "id": "6d1268bb-5101-4702-823b-e6b91be9bdf5",
+            "name": "test",
+            "email": "test@test.com"
+          }
+        }
+    },
+    {
+        "key": "7d4268ee-4324-6574-4343-dwq91be9bee",
+        "value": {
+          "data": {
+            "id": "7d4268ee-4324-6574-4343-dwq91be9bee",
+            "name": "test",
+            "email": "test@test.com"
+          }
+        }
+    }
+]
